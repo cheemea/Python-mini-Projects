@@ -1,0 +1,18 @@
+import random
+
+# In this the player guessess a number btw 1 and 10 , random library is used to get a random number , if both numbers matches the user with else he looses.
+
+while True:
+    game_guess_numbers = [1,2,3,4,5,6,7,8,9,10]
+    computer = random.choice(game_guess_numbers)
+    user_input = input("Enter a number between 1 and 10 (or 'q' to quit): ")
+    if user_input.lower() == 'q':
+        print("Thanks for playing! Goodbye. 👋")
+        break  
+    elif not user_input.isdigit():
+        print("Invalid input! Please enter a number between 1 and 10.")
+        continue
+    elif user_input == computer:
+        print("🎉 You guessed correctly!")
+    else:
+        print(f"❌ You guessed incorrectly! The number was: {computer}")
